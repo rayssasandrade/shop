@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:shopapp/data/dummy_data.dart';
 import 'package:shopapp/models/product.dart';
 
