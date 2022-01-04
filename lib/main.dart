@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shopapp/models/product_list.dart';
-import 'package:shopapp/pages/counter_page.dart';
 import 'package:shopapp/pages/product_detail_page.dart';
 import 'package:shopapp/pages/products_page.dart';
-import 'package:shopapp/providers/counter.dart';
 import 'package:shopapp/utils/app_routes.dart';
+import 'models/product_list.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -27,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         home: ProductsOverviewPage(),
         routes: {
-          AppRoutes.PRODUCT_DETAIL: (ctx) => CounterPage(),
+          AppRoutes.PRODUCT_DETAIL: (ctx) => ProductDetailPage(),
         },
         debugShowCheckedModeBanner: false,
       ),
