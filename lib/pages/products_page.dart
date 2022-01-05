@@ -8,7 +8,10 @@ class ProductsOverviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Minha Loja'),
+        centerTitle: true,
+        title: const Text(
+          'HiStore',
+        ),
       ),
       body: ProductGrid(),
     );
