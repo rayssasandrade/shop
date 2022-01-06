@@ -8,7 +8,10 @@ import 'package:shopapp/utils/app_routes.dart';
 class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<Product>(context);
+    final product = Provider.of<Product>(
+      context,
+      listen: false,
+    );
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
@@ -38,14 +41,19 @@ class ProductItem extends StatelessWidget {
             ),
             trailing: Row(
               children: [
-                IconButton(
-                  onPressed: () {
-                    product.toggleFavorite();
-                  },
-                  icon: Icon(product.isFavorite
-                      ? Icons.favorite
-                      : Icons.favorite_border),
-                  color: Theme.of(context).accentColor,
+                Consumer<Product>(
+                  child: Column(
+                    children: const [Text('Algo que nunca muda!')],
+                  ),
+                  builder: (ctx, product, child) => IconButton(
+                    onPressed: () {
+                      product.toggleFavorite();
+                    },
+                    icon: Icon(product.isFavorite
+                        ? Icons.favorite
+                        : Icons.favorite_border),
+                    color: Theme.of(context).accentColor,
+                  ),
                 ),
                 IconButton(
                   onPressed: () {},
