@@ -21,9 +21,9 @@
 # is commented out by default.
 .vscode/
 
-/android/
-/windows/
-/ios/
+android/
+windows/
+ios/
 
 # Flutter/Dart/Pub related
 **/doc/api/
