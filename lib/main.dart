@@ -5,7 +5,7 @@ import 'package:shopapp/models/order_list.dart';
 import 'package:shopapp/pages/cart_page.dart';
 import 'package:shopapp/pages/orders_page.dart';
 import 'package:shopapp/pages/product_detail_page.dart';
-import 'package:shopapp/pages/products_page.dart';
+import 'package:shopapp/pages/products_overview_page.dart';
 import 'package:shopapp/utils/app_routes.dart';
 import 'models/product_list.dart';
 
