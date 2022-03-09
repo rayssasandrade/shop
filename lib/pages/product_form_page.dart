@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopapp/models/product.dart';
@@ -79,7 +80,19 @@ class _ProductFormPageState extends State<ProductFormPage> {
 
     Provider.of<ProductList>(context, listen: false)
         .saveProduct(_formDate)
-        .then((value) {
+        .catchError((error) {
+      return showDialog<void>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+                title: const Text('Ocorreu um erro!'),
+                content: const Text('Ocorreu um erro para salvar o produto.'),
+                actions: [
+                  TextButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: const Text('OK')),
+                ],
+              ));
+    }).then((value) {
       setState(() => _isLoading = false);
       Navigator.of(context).pop();
     });
