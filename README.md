@@ -39,7 +39,7 @@ O projeto é a codificação de um aplicativo de vendas em dispositivos móveis 
 
 - Execução do algoritmo 
 
-...em andamento
+<img src="/lib/assets/images/loja.png" alt="loja" height="400em" /><img src="/lib/assets/images/menu.png" alt="menu" height="400em" /><img src="/lib/assets/images/carrinho.png" alt="carrinho" height="400em" /><img src="/lib/assets/images/pedidos.png" alt="pedidos" height="400em" /><img src="/lib/assets/images/gerenciarPedidos.png" alt="gerenciarPedidos" height="400em" /><img src="/lib/assets/images/formulário.png" alt="formulário" height="400em" />
 
 ### Autor
 
