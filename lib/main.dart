@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopapp/models/cart.dart';
 import 'package:shopapp/models/order_list.dart';
+import 'package:shopapp/pages/auth_page.dart';
 import 'package:shopapp/pages/cart_page.dart';
 import 'package:shopapp/pages/orders_page.dart';
 import 'package:shopapp/pages/product_detail_page.dart';
@@ -39,8 +40,9 @@ class MyApp extends StatelessWidget {
           canvasColor: const Color.fromRGBO(255, 254, 229, 1),
           fontFamily: 'Lato',
         ),
-        home: ProductsOverviewPage(),
+        //home: AuthPage(),
         routes: {
+          AppRoutes.AUTH: (ctx) => AuthPage(),
           AppRoutes.HOME: (ctx) => ProductsOverviewPage(),
           AppRoutes.PRODUCT_DETAIL: (ctx) => ProductDetailPage(),
           AppRoutes.CART: (ctx) => CartPage(),
@@ -53,5 +55,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
