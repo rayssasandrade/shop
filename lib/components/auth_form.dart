@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shopapp/models/auth.dart';
 
 enum AuthMode { Signup, Login }
 
@@ -32,7 +34,7 @@ class _AuthFormState extends State<AuthForm> {
     });
   }
 
-  void _submit() {
+  Future<void> _submit() async {
     final isValid = _formKey.currentState?.validate() ?? false;
 
     if (!isValid) {
@@ -42,11 +44,20 @@ class _AuthFormState extends State<AuthForm> {
     setState(() => _isLoading = true);
 
     _formKey.currentState?.save();
+    Auth auth = Provider.of(context, listen: false);
 
     if (_isLogin()) {
       //Login
+      await auth.login(
+        _authData['email']!,
+        _authData['password']!,
+      );
     } else {
       // Registrar
+      await auth.signup(
+        _authData['email']!,
+        _authData['password']!,
+      );
     }
 
     setState(() => _isLoading = false);
@@ -80,14 +91,14 @@ class _AuthFormState extends State<AuthForm> {
                 ),
               ),
               keyboardType: TextInputType.emailAddress,
+              onSaved: (email) => _authData['email'] = email ?? '',
               validator: (_email) {
                 final email = _email ?? '';
                 if (email.trim().isEmpty || !email.contains('@')) {
-                  return 'Infome uma e-mail válida';
+                  return 'Informe um e-mail válido.';
                 }
                 return null;
               },
-              onSaved: (email) => _authData['email'] = email ?? '',
             ),
             SizedBox(
               height: 10,
@@ -112,14 +123,14 @@ class _AuthFormState extends State<AuthForm> {
               keyboardType: TextInputType.emailAddress,
               obscureText: true,
               controller: _passwordController,
+              onSaved: (password) => _authData['password'] = password ?? '',
               validator: (_password) {
                 final password = _password ?? '';
                 if (password.isEmpty || password.length < 5) {
-                  return 'Infome uma senha válida';
+                  return 'Informe uma senha válida';
                 }
                 return null;
               },
-              onSaved: (password) => _authData['password'] = password ?? '',
             ),
             SizedBox(
               height: 10,
@@ -148,7 +159,7 @@ class _AuthFormState extends State<AuthForm> {
                     ? null
                     : (_password) {
                         final password = _password ?? '';
-                        if (password != _passwordController) {
+                        if (password != _passwordController.text) {
                           return 'Senhas informadas não conferem.';
                         }
                         return null;
