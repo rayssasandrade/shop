@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shopapp/models/auth.dart';
 import 'package:shopapp/models/cart.dart';
 import 'package:shopapp/models/order_list.dart';
+import 'package:shopapp/pages/auth_or_home_page.dart';
 import 'package:shopapp/pages/auth_page.dart';
 import 'package:shopapp/pages/cart_page.dart';
 import 'package:shopapp/pages/orders_page.dart';
@@ -24,16 +25,22 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => ProductList(),
+          create: (_) => Auth(),
+        ),
+        ChangeNotifierProxyProvider<Auth, ProductList>(
+          create: (_) => ProductList('', []),
+          update: (ctx, auth, previuos) {
+            return ProductList(auth.token ?? '', previuos?.items ?? []);
+          },
         ),
         ChangeNotifierProvider(
           create: (_) => Cart(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => OrderList(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => Auth(),
+        ChangeNotifierProxyProvider<Auth, OrderList>(
+          create: (_) => OrderList('', []),
+          update: (ctx, auth, previuos) {
+            return OrderList(auth.token ?? '', previuos?.items ?? []);
+          },
         ),
       ],
       child: MaterialApp(
@@ -46,8 +53,7 @@ class MyApp extends StatelessWidget {
         ),
         //home: AuthPage(),
         routes: {
-          AppRoutes.AUTH: (ctx) => AuthPage(),
-          AppRoutes.HOME: (ctx) => ProductsOverviewPage(),
+          AppRoutes.AUTH_OR_HOME: (ctx) => AuthOrHomePage(),
           AppRoutes.PRODUCT_DETAIL: (ctx) => ProductDetailPage(),
           AppRoutes.CART: (ctx) => CartPage(),
           AppRoutes.ORDERS: (ctx) => OrdersPage(),
