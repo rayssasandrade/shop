@@ -28,16 +28,19 @@ class MyApp extends StatelessWidget {
           create: (_) => Auth(),
         ),
         ChangeNotifierProxyProvider<Auth, ProductList>(
-          create: (_) => ProductList('', []),
+          create: (_) =>
+              ProductList(), //('', []) antes de inicializar no construtor
           update: (ctx, auth, previuos) {
-            return ProductList(auth.token ?? '', previuos?.items ?? []);
+            return ProductList(
+                auth.token ?? '', auth.userId ?? '', previuos?.items ?? []);
           },
         ),
         ChangeNotifierProvider(
           create: (_) => Cart(),
         ),
         ChangeNotifierProxyProvider<Auth, OrderList>(
-          create: (_) => OrderList('', []),
+          create: (_) =>
+              OrderList(), //('', []) antes de inicializar no construtor
           update: (ctx, auth, previuos) {
             return OrderList(auth.token ?? '', previuos?.items ?? []);
           },
