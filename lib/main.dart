@@ -42,7 +42,8 @@ class MyApp extends StatelessWidget {
           create: (_) =>
               OrderList(), //('', []) antes de inicializar no construtor
           update: (ctx, auth, previuos) {
-            return OrderList(auth.token ?? '', previuos?.items ?? []);
+            return OrderList(
+                auth.token ?? '', auth.userId ?? '', previuos?.items ?? []);
           },
         ),
       ],
