@@ -24,19 +24,23 @@ class AuthPage extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  height: deviceSize.height * 0.25,
-                  width: double.infinity,
-                  child: Image.asset("assets/images/please.png"),
+          Center(
+            child: SingleChildScrollView(
+              child: Container(
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: deviceSize.height * 0.25,
+                      width: double.infinity,
+                      child: Image.asset("assets/images/please.png"),
+                    ),
+                    AuthForm(),
+                  ],
                 ),
-                AuthForm(),
-              ],
+              ),
             ),
           ),
         ],
