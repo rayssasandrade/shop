@@ -27,6 +27,12 @@ O projeto é a codificação de um aplicativo de vendas em dispositivos móveis 
 - Tratando Erro
 - Pull-To-Refresh
 - FutureBuilder
+- Autenticação 
+- Gerenciamento de token
+- ProxyProvider
+- Regras do RealTime Database
+- Widgets de Animação
+- Trancisão
 - ...
 
 ### Iniciando...
