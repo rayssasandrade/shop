@@ -44,7 +44,16 @@ O projeto é a codificação de um aplicativo de vendas em dispositivos móveis 
 
 - Execução do algoritmo 
 
-<img src="/assets/images/loja.png" alt="loja" height="400em" /><img src="/assets/images/menu.png" alt="menu" height="400em" /><img src="/assets/images/carrinho.png" alt="carrinho" height="400em" /><img src="/assets/images/pedidos.png" alt="pedidos" height="400em" /><img src="/assets/images/gerenciarPedidos.png" alt="gerenciarPedidos" height="400em" /><img src="/assets/images/formulário.png" alt="formulário" height="400em" />
+<img src="/assets/images/login.png" alt="login" height="400em" />
+<img src="/assets/images/loja.png" alt="loja" height="400em" />
+<img src="/assets/images/menu.png" alt="menu" height="400em" />
+<img src="/assets/images/carrinho.png" alt="carrinho" height="400em" />
+<img src="/assets/images/pedidos.png" alt="pedidos" height="400em" />
+<img src="/assets/images/gerenciamentoPedidos.png" alt="gerenciarPedidos" height="400em" />
+<img src="/assets/images/formulário.png" alt="formulário" height="400em" />
+<img src="/assets/images/edição.png" alt="edição" height="400em" />
+<img src="/assets/images/exclusão.png" alt="exclusão" height="400em" />
+<img src="/assets/images/favoritos.png" alt="favoritos" height="400em" />
 
 ### Autor
 
