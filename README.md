@@ -33,7 +33,6 @@ O projeto é a codificação de um aplicativo de vendas em dispositivos móveis 
 - Regras do RealTime Database
 - Widgets de Animação
 - Trancisão
-- ...
 
 ### Iniciando...
 
